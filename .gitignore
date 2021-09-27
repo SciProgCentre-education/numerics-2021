@@ -1,0 +1,8 @@
+.ipynb_checkpoints/
+data/
+__pycache__/
+*/__pycache__
+build*
+.pytest_cache
+.vscode
+noa/
