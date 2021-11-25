@@ -11,7 +11,6 @@ inline torch::Tensor clone_check_matrix(torch::Tensor A)
 {
 
     TORCH_CHECK(A.dim() == 2, "matrix is required");
-    TORCH_CHECK(A.is_contiguous(), "contiguous matrix is required");
     TORCH_CHECK(A.dtype() == torch::kFloat64, "double matrix is required");
     return A.clone();
 }
