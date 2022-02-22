@@ -1,3 +1,5 @@
+#define HAVE_OPENMP
+
 #include "tnl-intro.hh"
 #include "utils.hh"
 #include <torch/extension.h>
