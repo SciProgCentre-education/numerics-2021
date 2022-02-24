@@ -8,7 +8,8 @@ torch::Tensor solve(
     torch::Tensor crow_indices,
     torch::Tensor col_indices,
     torch::Tensor values,
-    torch::Tensor b)
+    torch::Tensor b, 
+    float omega)
 {
     TORCH_CHECK(values.dtype() == torch::kFloat32, "values must be float");
     TORCH_CHECK(b.dtype() == torch::kFloat32, "b must be float");
@@ -20,7 +21,7 @@ torch::Tensor solve(
 
 
     return jacobi_solve<float, Devices::Cuda>(
-        crow_indices, col_indices, values, b);
+        crow_indices, col_indices, values, b, omega);
 }
 
 PYBIND11_MODULE(TORCH_EXTENSION_NAME, m)

@@ -17,7 +17,8 @@ torch::Tensor jacobi_solve(
     const torch::Tensor &crow_indices,
     const torch::Tensor &col_indices,
     const torch::Tensor &values,
-    const torch::Tensor &tensor_b) {
+    const torch::Tensor &tensor_b,
+    const float &omega) {
 
     TORCH_CHECK(crow_indices.dtype() == torch::kInt32, "crow_indices must be int");
     TORCH_CHECK(col_indices.dtype() == torch::kInt32, "col_indices must be int");
@@ -36,6 +37,7 @@ torch::Tensor jacobi_solve(
     auto b = VectorView<Dtype, Device>{tensor_b.data_ptr<Dtype>(), size};
 
     auto solver = Jacobi<SparseMatrixView<Dtype, Device>>{};
+    solver.setOmega(omega);
     solver.setMatrix(matrix);
     solver.solve(b, x);
 
