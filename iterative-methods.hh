@@ -2,11 +2,11 @@
 
 #include <torch/extension.h>
 
-#include <noa/3rdparty/TNL/Matrices/MatrixWrapping.h>
-#include <noa/3rdparty/TNL/Matrices/SparseMatrix.h>
-#include <noa/3rdparty/TNL/Containers/VectorView.h>
-#include <noa/3rdparty/TNL/Solvers/Linear/Jacobi.h>
-#include <noa/3rdparty/TNL/Solvers/Linear/SOR.h>
+#include <noa/3rdparty/tnl-noa/src/TNL/Matrices/MatrixWrapping.h>
+#include <noa/3rdparty/tnl-noa/src/TNL/Matrices/SparseMatrix.h>
+#include <noa/3rdparty/tnl-noa/src/TNL/Containers/VectorView.h>
+#include <noa/3rdparty/tnl-noa/src/TNL/Solvers/Linear/Jacobi.h>
+#include <noa/3rdparty/tnl-noa/src/TNL/Solvers/Linear/SOR.h>
 
 using namespace noa::TNL::Containers;
 using namespace noa::TNL::Matrices;
